@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handson - Functions</title>
+    <style>
+        .answer{
+            text-decoration: underline;
+        }
+        .code{
+            font-size: large;
+            font-weight: bold;
+            color:green;
+        }
+        .backcolor{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; text-decoration: underline;">Function - Handson</h1>
+    <hr>
+    <h2>Q1. Create one function with zero parameter having a console statement</h2>
+    <h3 class="answer">Answer:</h3>
+        <pre>
+            <span class="code">
+            function demo()   //Function Definition
+            {
+                console.log("Hello World!");  //console statement
+            }
+            demo();           //Function Calling    
+            </span>
+        </pre>
+    <h3 style="font-style: italic;">Function is a block of code which executes the statements inside that block. Function can be created using the keyword "function" followed by the
+        name of the function with open and close brackets <span class="backcolor">function demo()</span>
+    </h3>
+    <hr>
+    <h2>Q2. Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</h2>
+    <h3 class="answer">Answer:</h3>
+        <pre>
+            <span class="code">
+                function sum(a,b)
+                {
+                    console.log(a+b);
+                }
+                sum(3,4);
+            </span>
+        </pre>
+    <h3 style="font-style: italic;"><span class="backcolor">function sum()</span> gets two parameters a and b in which the operation is performed.</h3>
+    <hr>
+    <h2>Q3. Create one arrow function</h2>
+    <h3 class="answer">Answer:</h3>
+    <pre><span class="backcolor code">let demo=(a,b)=>a*b;
+    demo(3,4);</span></pre>
+    <h3 style="font-style: italic;"><span class="backcolor">demo()</span>is an arrow function which is short written in a single line.
+    Arrow function returns value on its own. Parenthesis is not required when statement is written within a single line.</h3>
+    <hr>
+    <h2>Q4. <pre>
+        Print output: 
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();
+    </pre></h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor">"Undefined"</span></h3>
+    <h3 style="font-style: italic;">Reason - <span class="backcolor">First var x</span> is declared and initialized globally. so, globally x has a value of 21. But, 
+    <span class="backcolor">Second var x</span> is declared inside the "First Class Function" named as <span class="backcolor">girl()</span>
+    so, <span class="backcolor">Hoisting occurs inside girl() function, var x hoists to the top of the function.</span>so, var x is declared
+    again in the functional scope, but not initialized. Hence, the result is <span class="backcolor">Undefined</span> </h3>
+    <hr>
+    <h2>Q5. <pre>
+        Print output: 
+        var x = 21;
+        girl ();
+        console.log(x)
+        function girl() {
+            console.log(x);
+            var x = 20;
+        };
+    </pre></h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor">"Undefined" & 21</span></h3>
+    <h3 style="font-style: italic;">Reason - <span class="backcolor">First var x</span> is declared and initialized globally. so, globally x has a value of 21. But, 
+        <span class="backcolor">Second var x</span> is declared inside the "First Class Function" named as <span class="backcolor">girl()</span>
+        so, <span class="backcolor">Hoisting occurs inside girl() function, var x hoists to the top of the function.</span>Then, var x is declared
+        again in the functional scope, but not initialized. The output of <span class="backcolor">console statement inside function</span> will be
+        <span class="backcolor code">Undefined</span> and output of <span class="backcolor">second console statement which is outside function</span>
+        will be <span class="backcolor code">21</span> since, var x=21 is global.</h3>
+    <hr>
+    <h2>Q6. <pre>
+        Print output:
+
+        var x = 21;
+        a();
+        b();
+        function a() {
+            x = 20;
+            console.log(x);
+        };
+        function b() {
+            x = 40;
+            console.log(x);
+        };
+    </pre></h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor">20 & 40</span></h3>
+    <h3 style="font-style: italic;">Reason - <span class="backcolor">var x is declared and initialized with 21 globally.</span> when a() function is called
+        <span class="backcolor">x is initialized again with 20</span> inside a() function. Here, x is already declared globally and this x can be
+        accessed inside the function also. So, it prints <span class="backcolor code">20</span>. with the same reason, b() also called and prints
+        <span class="backcolor code">40</span>
+    </h3>
+    <hr>
+    <h2>Q7. Write a function that accepts parameter n and returns factorial of n</h2>
+    <h3 class="answer">Answer:</h3>
+    <h3><span class="backcolor code">
+        <pre>
+            function facto(n) {
+                var fact = 1;
+                for (var i = 1; i <= n; i++) {
+                    fact = fact * i;
+                }
+                return fact;
+            }
+            console.log(facto(5));
+        </pre>
+    </span></h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor code">120</span></h3>
+    <h3 style="font-style: italic;">Reason - Here, <span class="backcolor">function facto()</span> is passed with a value <span class="backcolor">5</span>
+     as an argument. Inside function, a variable <span class="backcolor">fact is declared and initialized with 1</span>. According to the for loop,
+     <span class="backcolor">var i runs from 1 to n value</span>. Each and everytime <span class="backcolor">i is multiplied with fact</span> which
+     is already present as i value increments. var fact also gets updated for each iteration.</h3> 
+    <hr>
+    <h2>Q8. <pre>
+        Guess the Output:
+
+        function FindSum(a, b){
+            return a + b;
+        }
+        function DisplayData(data, batch){
+            console.log(`i am from ${data} and My batch is EA${batch}`)
+        }
+        DisplayData("PrepBytes", FindSum(10, 9));
+    </pre>
+    </h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor code">i am from PrepBytes and My batch is EA19</span></h3>
+    <h3 style="font-style: italic;">Reason - <span class="backcolor code">function DisplayData("one",two())</span> have two arguments. one is string 
+        and another one is a function with again two parameters. So, the first string parameter straightly goes into the DisplayData() as data and batch, like
+        <span class="backcolor">data="prepbytes" and batch=FindSum(10,9).</span> Now, FindSum() is called, and it goes into the function and it returns
+        a+b to batch. <span class="backcolor">so, Now batch =a+b, which is 19.</span>
+    </h3>
+    <hr>
+    <h2>Q9. <pre>
+        Guess the output:
+
+        Abc();
+        const Abc = function(){
+            let value = 20;
+            console.log(value);
+        }
+    </pre></h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor code">Reference Error!!</span></h3>
+    <h3 style="font-style: italic;">Reason - Simply, In javacsript, function declaration and variable declaration are hoisted top of the code,
+        which means only variable is declared and no value is initialized to it. Since, <span class="backcolor">const Abc is a First Class 
+        function</span> means the const variable Abc stores the function and the const variable Abc is hoisted to the top and not initialized 
+        with the function Abc(). so, we will get a Reference Error.
+    </h3>
+    <hr>
+    <h2>Q10. <pre>
+        Guess the output:
+
+        var a = 10;
+        (function (){
+            console.log(a);
+            var a = 20;
+        })();
+    </pre></h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor code">Undefined</span></h3>
+    <h3 style="font-style: italic;">Reason - The function is IIFE(Immediately Invoked Function Expression), the function runs as soon as it is defined
+        which is executed using <span class="backcolor">();</span> Anyhow, the variable <span class="backcolor">var a</span> is declared and 
+        initialized in the first line. Then, inside IIFE function <span class="backcolor">again var a is declared and hoisted to top of that function</span>
+        so, var a is declared but not initialized. So, the output is <span class="backcolor">Undefined</span>
+    </h3>
+    <hr>
+    <h2>Q11. <pre>
+        Guess the Output: 
+
+        const greet =  function(name){
+            return function(m){
+                console.log(`Hi!! ${name}, ${m}`);
+            }
+        } 
+        const greet_message = greet('EA19');
+        greet_message("Welcome To PrepBytes");
+    </pre></h2>
+    <h3 class="answer">Answer:</h3>
+    <h3 style="font-style: italic;">Output : <span class="backcolor code">Hi!! EA19, Welcome To PrepBytes</span></h3>
+    <h3 style="font-style: italic;">Reason - Firstly, <span class="backcolor">greet("EA19")</span> is invoked as this is a first class function  stored
+        into <span class="backcolor">const greet_message</span>. greet function returns another function(m) with parameter m. <span class="backcolor">
+        greet_message(m)</span> is then invoked with the message passed through its argument and in console it prints the both the values passed in the arguments.
+    </h3>
+</body>
+</html>
